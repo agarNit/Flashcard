@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="{{url_for('static', filename = 'styles.css')}}">
+</head>
+<body class="bg">
+    <h1 class="dashboard">Dashboard</h1>
+    <button type="button" class="btn2" ><a href="/create_deck/{{user_id}}">Create Deck</a></button>
+    {% if decks|length == 0 %}
+        <h1 class="no_deck">No decks found. Create decks.</h1>
+    {% else %}
+        {% for deck in decks %} 
+        <div class="deckform" >
+            <div class="deck_name"><a href="/cards/{{deck.deck_id}}">{{deck.deck_name}}</a></div>
+            <div class="deck_text">Deck Score: {{deck.deck_score}}</div>
+            <div class="deck_text">Last Review Time: {{deck.deck_last_review_time}}</div>
+            <a href="/decks/{{deck.deck_id}}/update"><input type="submit" class="dash_update" value="Update"></a>
+            <a href="/decks/{{deck.deck_id}}/delete"><input type="submit" class="dash_delete" value="Delete "></a>
+            <a href="/decks/{{deck.deck_id}}/reset"><button type="button" class="dash_reset" value= "R">R</button></a>
+        </div>
+        {% endfor %}
+    {% endif %}
+</body>
+</html>

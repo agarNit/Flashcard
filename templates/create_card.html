@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create</title>
+  <link rel="stylesheet" href="{{url_for('static', filename = 'styles.css')}}">
+</head>
+<body class="body">
+    <h1>Create your cards here.</h1>
+    <div class="signup">
+      <form action="/create_card/{{deck_id}}" class="form" method='POST'>
+        <div class="inputContainer">
+          <input type="text" id="fname" class="input" name="card_front" placeholder="a" autocomplete="off" required>
+          <label for="" class="label">Card Front</label>
+        </div>
+        <div class="inputContainer">
+          <input id="fname" class="input" name="card_back" rows="5" placeholder="a" autocomplete="off" required></input>
+          <label for="" class="label">Card Back</label>
+        </div>
+          <input type="submit" class="submitBtn1" value="Create">
+      </form>
+    </div>
+</body>
+</html>

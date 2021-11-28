@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="{{url_for('static', filename = 'styles.css')}}">
+  <script type="text/javascript" src="{{url_for('static', filename = 'js/custom.js')}}"></script>
+</head>
+<body class="body">
+    <div class="login">
+        <form action="/login" class="form" method = "POST" id="form2" > 
+        <h1 class="title">Login</h1>
+
+        <div class="inputContainer">
+            <input type="text" class="input" name="username" id="username" placeholder="a" autocomplete="off" required>
+            <label class="label">Username</label>
+        </div>
+        <div class="inputContainer">
+            <input type="password" class="input" name="password" id="password" placeholder="a" autocomplete="off" required>
+            <label class="label">Password</label>
+        </div>
+
+        <input type="submit" class="submitBtn1" value="Login">
+        <a href="/signup"><div class="submitBtn2" >Sign Up</div></a>
+        </form>
+    </div>
+</body>
+</html>

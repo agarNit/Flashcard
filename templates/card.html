@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cards</title>
+  <link rel="stylesheet" href="{{url_for('static', filename = 'styles.css')}}">
+  <script type="text/javascript" src="{{url_for('static', filename = 'js/custom.js')}}"></script> 
+
+</head>
+<body class="bg">
+<h1 class="dashboard">Cards</h1>
+<button type="button" class="btn1"><a href="/dashboard/{{user_id}}">Go to Dashboard</a></button>
+<button type="button" class="btn2"><a href="/create_card/{{deck_id}}">Create Card</a></button>
+<div class="flip-card">
+  <div class="flip-card-inner" class="content">
+    {% if card == None %}
+        <h1 class="no_card">No card found. Create card.<h2>
+    {% else %}
+    <div class="flip-card-front" id="card_front" >
+        <div class="card_front">{{card.card_front}}</div><br><br>
+    </div>
+    <div class="flip-card-back" id="card_back" >
+        <div class="card_back">{{card.card_back}}</div><br><br>
+        <div class="card_text">Card Score: {{card.card_score}}</div><br>
+        <div class="card_text">Last Review Time: {{card.card_last_review_time}}</div>
+        <button type="button" class="easy"><a href="/cards/{{card.card_id}}/EASY">Easy</a></button>
+        <button type="button" class="medium"><a href="/cards/{{card.card_id}}/MEDIUM">Medium</a></button>
+        <button type="button" class="difficult"><a href="/cards/{{card.card_id}}/DIFFICULT">Difficult</a></button>
+        <a href="/cards/{{card.card_id}}/update"><input type="submit" class="update_card_back" value="Update Card"></a>
+        <a href="/cards/{{card.card_id}}/delete"><input type="submit" class="delete_card_back" value="Delete Card"></a>
+    </div>
+    {% endif %}
+  </div>
+</div>
+</body>
+</html>

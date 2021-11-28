@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Update</title>
+  <link rel="stylesheet" href="{{url_for('static', filename = 'styles.css')}}">
+</head>
+<body class="body">
+    <h1>Update your card here.</h1>
+    <div class="login">
+      <form action="/cards/{{card_id}}/update" class="form" method='POST'>
+        <div class="inputContainer">
+          <input type="text"  class="input" id="fname" name="card_front" placeholder="a" autocomplete="off" required >
+          <label class="label">Card Front</label>
+        </div>
+        <div class="inputContainer">
+          <input type="text"  class="input" id="fname" name="card_back" placeholder="a" autocomplete="off" required >  
+          <label class="label">Card Back</label>
+        </div>
+          <input type="submit" class="submitBtn1" value="Update">
+      </form>
+    </div>
+</body>
+</html>
