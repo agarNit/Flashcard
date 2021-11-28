@@ -18,4 +18,4 @@ Flashcards are effective tools for both learning and studying when they're used 
   - Move to the directory where all the files are present using 'cd' command.
   - Install python3 on your desktop using the command 'sudo apt install python3.8'.
   - type python3 main.py and click on enter.
-  - Follow t link highlighted by the terminal to view the project.
+  - Follow the link highlighted by the terminal to view the project.
